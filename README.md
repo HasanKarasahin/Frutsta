@@ -1,0 +1,2 @@
+# Frutsta
+Nesne Yönelimli Programlama
