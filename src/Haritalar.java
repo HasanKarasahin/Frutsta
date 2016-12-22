@@ -4,7 +4,7 @@ public class Haritalar extends JPanel {
 	HareketsizEngeller[] hareketsizengel;
 	HareketliEngeller hareketliengel;
 	Canavarlar[] canevar;
-	
+	//deneme
 	Yemler[] yem;
 	Player player;
 	Bayrak bayrak;
