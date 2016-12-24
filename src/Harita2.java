@@ -6,12 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 public class Harita2 extends Haritalar implements ActionListener  {
-
 	static boolean  kontrol2=false,map2_kontrol=false;
 	static Timer timer2;
-	
 	public Harita2() {
-		super();
+		 super();
 		 player=new Player(0, 410, 25, 25);
 		 bayrak=new Bayrak(0, 0, 0,0);
 		 hareketsizengel=new HareketsizEngeller[10];
@@ -33,7 +31,7 @@ public class Harita2 extends Haritalar implements ActionListener  {
 		 yem[2]=new Yemler(250, 200, 10,20);
 		 yem[3]=new Yemler(115, 300, 10,20);
 		 hareketliengel=new HareketliEngeller(200,190,100,50);
-		 actionkutusu=new Action(390, 250, 5, 5,"asagi");
+		 actionkutusu=new Action(380, 220, 5, 5,"asagi");
 		 timer2=new Timer(20, this);
 		 timer2.stop();
 	}
@@ -44,13 +42,9 @@ public class Harita2 extends Haritalar implements ActionListener  {
 		if(map2_kontrol)
 		{
 			 for (int i = 0; i < hareketsizengel.length; i++) 
-			 {
 				 hareketsizengel[i].HareketsizEngelciz(g);
-			 }	 
 			 for (int i = 0; i < yem.length; i++) 
-			 {
 				 yem[i].YemCiz(g);
-			 } 
 			 bayrak.BayrakCiz(g);
 			 player.PlayerCiz(g);
 			 hareketliengel.HareketliEngelCiz(g);
@@ -71,13 +65,9 @@ public class Harita2 extends Haritalar implements ActionListener  {
 				map2_kontrol=player.PlayerBayrakKontrol(0, -adim, bayrak, bayraksayisi,yemkontrol,yemsayisi);	
 				player.PlayerKutuEtkilesim(0, -adim, actionkutusu);
 				if(yemkontrol==yemsayisi)
-				{
-					bayrak=new Bayrak(100, 130, 10,20);
-				}
+					bayrak=new Bayrak(180, 250, 10,20);
 				if(kontrol2)
-				{
 					kontrol2=player.PlayerHareketliEngelKontrol(0, -adim, hareketliengel, 1);
-				}	
 			}
 			else 
 			{
@@ -90,9 +80,7 @@ public class Harita2 extends Haritalar implements ActionListener  {
 				    bayrak=new Bayrak(0, 0, 0,0);
 				    player=new Player(0, 410, 25, 25);  
 				  if (0<FareDinleyici.x && FareDinleyici.x<40 &&FareDinleyici.y>430 && FareDinleyici.y<450) 
-					 {
 						kontrol2=true;
-					 }	
 				  hareketliengel=new HareketliEngeller(200,190,100,50);
 			}
 		}
@@ -113,7 +101,7 @@ public class Harita2 extends Haritalar implements ActionListener  {
 			else 
 			{
 				LevelGecis.timerlevelgecis.start();
-				Pencere.pencere[5].setVisible(true);
+				Pencere.pencere[6].setVisible(true);
 				Pencere.pencere[2].setVisible(false);
 				Pencere.Levelgecislabel.setText("Level 3 ");
 			}

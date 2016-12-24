@@ -39,13 +39,9 @@ public class Harita1 extends Haritalar implements ActionListener {
 		if(map1_kontrol)
 		{
 			 for (int i = 0; i < hareketsizengel.length; i++) 
-			 {
 				 hareketsizengel[i].HareketsizEngelciz(g);
-			 }	 
 			 for (int i = 0; i < yem.length; i++) 
-			 {
 				 yem[i].YemCiz(g);
-			 } 
 			 player.PlayerCiz(g);
 			 bayrak.BayrakCiz(g);
 			 repaint();	
@@ -71,9 +67,7 @@ public class Harita1 extends Haritalar implements ActionListener {
 				Pencere.pencere[1].setCursor(Cursor.CROSSHAIR_CURSOR);
 				 yemkontrol=0;
 				  if (0<FareDinleyici.x && FareDinleyici.x<50 && FareDinleyici.y<455 &&FareDinleyici.y>450) 
-					 {
 					  kontrol1=true;
-					 }	
 				    player=new Player(0, 427, 25, 25);
 					yem[0]=new Yemler(370, 120, 10,20);
 					yem[1]=new Yemler(370, 250, 10,20);
@@ -99,7 +93,7 @@ public class Harita1 extends Haritalar implements ActionListener {
 			else 
 			{
 				LevelGecis.timerlevelgecis.start();
-				Pencere.pencere[5].setVisible(true);
+				Pencere.pencere[6].setVisible(true);
 				Pencere.pencere[1].setVisible(false);
 				Pencere.Levelgecislabel.setText("Level 2 ");
 			}

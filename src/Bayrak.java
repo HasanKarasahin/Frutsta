@@ -10,7 +10,6 @@ public class Bayrak {
 	}
 	public void BayrakCiz(Graphics g)
 	{
-		//g.setColor(Color.GREEN);
 		g.setColor(new Color(0, 148, 0));
 		g.fillRect((int)bayrak.getX(),(int)bayrak.getY(),(int)bayrak.getWidth(),(int)bayrak.getHeight());
 	}

@@ -11,10 +11,8 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 	Timer acilistimer;
 	Timer acilistimer2;
 	int kontrol=0;
+	ZamanCubugu zamancubugu;
 	static boolean  AcilisKontrol1=true,AcilisMap_kontrol=true;
-	
-	
-	
 	public AcilisHaritasi() {
 		super();
 		zamancubugu=new ZamanCubugu();
@@ -28,7 +26,6 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 		hareketsizengel[5]=new HareketsizEngeller(150,240,270,20);
 		hareketsizengel[6]=new HareketsizEngeller(150,320,270,20);
 		player=new Player(0, 360, 25, 25);
-		
 		acilistimer=new Timer(20, this);
 		acilistimer2=new Timer(100, this);
 		acilistimer.start();
@@ -41,9 +38,7 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 		if(AcilisMap_kontrol)
 		{
 			 for (int i = 0; i < hareketsizengel.length; i++) 
-			 {
-				 hareketsizengel[i].HareketsizEngelciz(g);
-			 }	 
+			 hareketsizengel[i].HareketsizEngelciz(g);	 
 			 zamancubugu.zamancubuguCiz(g);
 			 player.PlayerCiz(g);
 			 repaint();	
@@ -51,10 +46,8 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
      }
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		
 			if(AcilisKontrol1)
 			{
-
 				player.playerHareket();
 				AcilisKontrol1=player.PlayerHareketsizEngelKontrol(0, -adim,hareketsizengel,HareketsizEngelSayisi);
 				 if(FareDinleyici.x>150 &&FareDinleyici.x<300)
@@ -95,16 +88,13 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 			{
 				if(kontrol==0)
 				{
-					if (0<FareDinleyici.x && FareDinleyici.x<50 && FareDinleyici.y<400 &&FareDinleyici.y>365) 
-					 {
-						 AcilisKontrol1=true;
-					 }	 
-				    player=new Player(0, 360, 25, 25);
+					     if (0<FareDinleyici.x && FareDinleyici.x<50 && FareDinleyici.y<400 &&FareDinleyici.y>365) 
+						 AcilisKontrol1=true;	 
+				         player=new Player(0, 360, 25, 25);
 				}
 				else if(kontrol==1)
 				{
 					 acilistimer.stop();
-					 
 					 player=new Player(0, 0, 0, 0);
 					 acilistimer2.start();
 					 kontrol=2;
@@ -114,10 +104,7 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 					ZamanCubugu.brenk+=4;
 					ZamanCubugu.grenk+=5;
 					ZamanCubugu.rrenk+=2;
-					
-				
 					zamancubugu.zamancubuguyatay+=10;
-					
 					if(zamancubugu.zamancubuguyatay==500)
 					{
 						zamancubugu.zamancubuguyatay-=10;
@@ -136,7 +123,7 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 						else 
 						{
 							LevelGecis.timerlevelgecis.start();
-							Pencere.pencere[5].setVisible(true);
+							Pencere.pencere[6].setVisible(true);
 							Pencere.pencere[0].setVisible(false);
 						}
 					}

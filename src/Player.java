@@ -4,14 +4,12 @@ import java.awt.Rectangle;
 
 public class Player {
 	Rectangle Player;
-	 int aralik=0;
 	 public Player(int x,int y,int genislik,int yukseklik) 
 		{
 			Player=new Rectangle(x, y, genislik, yukseklik);
 		}
 	 public void PlayerCiz(Graphics g)
 		{
-			//g.setColor(Color.PINK);
 		    g.setColor(new Color(51, 47, 46));
 			g.fillRect((int)Player.getX(),(int)Player.getY(),(int)Player.getWidth(),(int)Player.getHeight());
 		}
@@ -30,7 +28,6 @@ public class Player {
 				  Player.setLocation((int)Player.getX()+x,(int)Player.getY()+y);
 			  else 
 			  {
-				  aralik=0;
 				  return false;
 			  } 
 			  return true;
@@ -70,8 +67,7 @@ public class Player {
 			  {
 				if (gecici.intersects(yem[i].getRectangle()))
 			   {
-					yem[i]=new Yemler(aralik, 0, 10, 20);
-					aralik+=20;
+					yem[i]=new Yemler(0, 0, 0, 0);
 					yemkontrol++;
 					return yemkontrol;
 			   }
@@ -83,13 +79,9 @@ public class Player {
 			  Rectangle gecici= new Rectangle(Player);
 			  gecici.setLocation((int)gecici.getX()+x,(int)gecici.getY()+y);
 				if (gecici.intersects(actiondeneme.getRectangle()))
-			   {
 					Action.kutudurum=true;
-			   }
 				else
-				{
 					Action.kutudurum=false;
-				}
 		}
 	 public boolean PlayerCanavarKontrol(int x,int y,Canavarlar[] canevar,int canavarsayisi)
 		{
@@ -105,7 +97,6 @@ public class Player {
 						 return false;
 					}
 			  }
-				
 				return true;
 		}
 	 public void playerHareket()

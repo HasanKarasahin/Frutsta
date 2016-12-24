@@ -13,7 +13,6 @@ static int rrenk=0;
 	}
 	public void zamancubuguCiz(Graphics g)
 	{
-			//g.setColor(Color.BLUE);
 		    g.setColor(new Color(rrenk, grenk, brenk));
 			g.fillRect((int)zamancubugu.getX(),(int)zamancubugu.getY(),(int)zamancubugu.getWidth()+zamancubuguyatay,(int)zamancubugu.getHeight());
 	}

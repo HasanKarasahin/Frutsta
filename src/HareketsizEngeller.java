@@ -10,8 +10,6 @@ public class HareketsizEngeller extends Engeller {
 	}
 	public void HareketsizEngelciz(Graphics g)
 	{
-		//g.setColor(new Color(107, 106, 104));
-		//g.setColor(new Color(232, 209, 218));
 		g.setColor(new Color(0, 0, 0));
 	    g.fillRect((int)hareketsizengel.getX(),(int)hareketsizengel.getY(),(int)hareketsizengel.getWidth(),(int)hareketsizengel.getHeight());	
 	}

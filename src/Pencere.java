@@ -10,31 +10,23 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Pencere {
-	static JFrame[] pencere=new JFrame[6];
+	static JFrame[] pencere=new JFrame[7];
 	static JLabel[] label=new JLabel[4];
-	
 	static  JLabel Levelgecislabel;
-	
-	
 	static Toolkit toolkit = Toolkit.getDefaultToolkit();
-	
 	static Point hotSpot = new Point(0, 0);
-	
 	static BufferedImage cursorImage = new BufferedImage(10, 10,BufferedImage.TRANSLUCENT);
-	
 	static Cursor invisibleCursor = toolkit.createCustomCursor(cursorImage,hotSpot, "InvisibleCursor");
-	
 	public static void main(String[] args) 
 	{
 		Harita1 harita1 = new Harita1();
 		Harita2 harita2 = new Harita2();
 		Harita3 harita3 = new Harita3();
 		Harita4 harita4 = new Harita4();
+		Harita5 harita5 = new Harita5();
 		LevelGecis lvlgecis = new LevelGecis();
-		
 		AcilisHaritasi acilisharitasi =new AcilisHaritasi();
 		FareDinleyici fare = new FareDinleyici();
-		
 	    for (int i = 0; i < pencere.length; i++) 
 	    {
 	    	pencere[i] = new JFrame("Harita");
@@ -44,7 +36,6 @@ public class Pencere {
 	    	pencere[i].addMouseMotionListener(fare);
 	    	pencere[i].setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    	pencere[i].setResizable(false);
-	    	pencere[i].setCursor(invisibleCursor);
 		}
 	    pencere[0].setVisible(true); 
 	    pencere[0].add(acilisharitasi);
@@ -52,17 +43,14 @@ public class Pencere {
     	pencere[2].add(harita2);
     	pencere[3].add(harita3);
     	pencere[4].add(harita4);
-    	
-    	
+    	pencere[5].add(harita5);
     	acilisharitasi.setBackground(Color.DARK_GRAY);
     	harita1.setBackground(Color.WHITE);
     	harita2.setBackground(Color.WHITE);
     	harita3.setBackground(Color.WHITE);
     	harita4.setBackground(Color.WHITE);
     	lvlgecis.setBackground(Color.BLACK);
-    	
     	Font tip=new Font("Algerian", 50, 50);
-    	
     	for (int i = 0; i < label.length; i++) 
     	{
     		 label[i]=new JLabel();
@@ -78,20 +66,16 @@ public class Pencere {
     	 acilisharitasi.add(label[0]);
     	 acilisharitasi.add(label[1]);	
     	 acilisharitasi.add(label[2]);	
-    	 JLabel BASLIKlabel=new JLabel("Frutsta V5");
+    	 JLabel BASLIKlabel=new JLabel("Frutsta V6");
     	 BASLIKlabel.setFont(tip);
     	 BASLIKlabel.setForeground(Color.RED);
     	 BASLIKlabel.setBounds(new Rectangle(new Point(100, 20), BASLIKlabel.getPreferredSize()));
     	 acilisharitasi.add(BASLIKlabel);
-    	 
-    	 
-    	 
-    	 
     	 Levelgecislabel=new JLabel("LEVEL 1 ");
     	 Levelgecislabel.setFont(tip);
     	 Levelgecislabel.setForeground(Color.RED);
     	 Levelgecislabel.setBounds(new Rectangle(new Point(150, 80), Levelgecislabel.getPreferredSize()));
-    	 pencere[5].add(Levelgecislabel);
-    	 pencere[5].add(lvlgecis);
+    	 pencere[6].add(Levelgecislabel);
+    	 pencere[6].add(lvlgecis);
 	}
 }

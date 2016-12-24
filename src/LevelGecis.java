@@ -20,6 +20,7 @@ int degerkontrol=0;
 			degerkontrol=0;
 			levelgeciskontrol=true;
 			timerlevelgecis.stop();
+			Pencere.pencere[5].setVisible(false);
 		}
 		else 
 		{

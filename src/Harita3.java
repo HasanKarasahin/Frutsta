@@ -7,15 +7,10 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 public class Harita3 extends Haritalar implements ActionListener {
-
-
 	static boolean  kontrol3=false,map3_kontrol=false;
 	static Timer timer3;
-	
-	
-	
 	public Harita3() {
-		super();
+		 super();
 		 player=new Player(0, 265, 25, 25);
 		 bayrak=new Bayrak(0, 0, 0,0);
 		 hareketsizengel=new HareketsizEngeller[11];
@@ -52,18 +47,11 @@ public class Harita3 extends Haritalar implements ActionListener {
 		if(map3_kontrol)
 		{
 			 for (int i = 0; i < hareketsizengel.length; i++) 
-			 {
 				 hareketsizengel[i].HareketsizEngelciz(g);
-			 }	 
 			 for (int i = 0; i < yem.length; i++) 
-			 {
 				 yem[i].YemCiz(g);
-			 } 
 			for (int i = 0; i < canevar.length; i++) 
-			{
 				canevar[i].CanavarCiz(g);
-			}
-			
 			 bayrak.BayrakCiz(g);
 			 player.PlayerCiz(g);
 			 repaint();	
@@ -86,18 +74,14 @@ public class Harita3 extends Haritalar implements ActionListener {
 					yemkontrol=player.PlayerYemKontrol(0, -adim, yem, yemsayisi,yemkontrol);
 				}
 				if(yemkontrol==yemsayisi)
-				{
 					bayrak=new Bayrak(480, 265, 10,20);
-				}
 			}
 			else 
 			{
 				Pencere.pencere[3].setCursor(Cursor.CROSSHAIR_CURSOR);
 				 player=new Player(0, 265, 25, 25);  
 				  if (0<FareDinleyici.x && FareDinleyici.x<40 &&FareDinleyici.y>275 && FareDinleyici.y<295) 
-					 {
 						kontrol3=true;
-					 }	
 				     yemkontrol=0;
 				     yem[0]=new Yemler(85, 150, 10,20);
 					 yem[1]=new Yemler(235, 150, 10,20);
@@ -123,7 +107,7 @@ public class Harita3 extends Haritalar implements ActionListener {
 			else 
 			{
 				LevelGecis.timerlevelgecis.start();
-				Pencere.pencere[5].setVisible(true);
+				Pencere.pencere[6].setVisible(true);
 				Pencere.pencere[3].setVisible(false);
 				Pencere.Levelgecislabel.setText("Level 4 ");
 			}	

@@ -10,11 +10,7 @@ import javax.swing.Timer;
 public class Canavarlar  implements ActionListener {
 Rectangle canavar;
 static Timer canavartimer;
-int kontrol=0;
-int max;
-int min;
-int baslangisx;
-int baslangisy;
+int kontrol=0,max,min,baslangisx,baslangisy;
 String hareketyonu;
 	public Canavarlar(int x,int y ,int genislik,int yukseklik,int interval,int max,int min,String hareketyonu) 
 	{
@@ -42,29 +38,29 @@ String hareketyonu;
 		{
 			if(kontrol==0)
 			{
-				baslangisx+=10;
-				if(baslangisx==max)
+				baslangisx-=10;
+				if(baslangisx==min)
 					kontrol=1;
 			}
 			else if(kontrol==1)
 			{
-				baslangisx-=10;
-				if(baslangisx==min)
+				baslangisx+=10;
+				if(baslangisx==max)
 					kontrol=0;
 			}
 		}
-		else if(hareketyonu=="yukariasagi")
+		else if(hareketyonu=="solsag")
 		{
 			if(kontrol==0)
 			{
-				baslangisy+=10;
-				if(baslangisy==max)
+				baslangisx-=10;
+				if(baslangisx==min)
 					kontrol=1;
 			}
 			else if(kontrol==1)
 			{
-				baslangisy-=10;
-				if(baslangisy==min)
+				baslangisx+=10;
+				if(baslangisx==max)
 					kontrol=0;
 			}
 		}
@@ -80,6 +76,21 @@ String hareketyonu;
 			{
 				baslangisy+=10;
 				if(baslangisy==max)
+					kontrol=0;
+			}
+		}
+		else if(hareketyonu=="yukariasagi")
+		{
+			if(kontrol==0)
+			{
+				baslangisy+=10;
+				if(baslangisy==max)
+					kontrol=1;
+			}
+			else if(kontrol==1)
+			{
+				baslangisy-=10;
+				if(baslangisy==min)
 					kontrol=0;
 			}
 		}

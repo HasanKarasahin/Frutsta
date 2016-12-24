@@ -19,14 +19,12 @@ public class Action  implements ActionListener {
 	}
 	public void actionkutusuCiz(Graphics g)
 	{
-		//g.setColor(Color.GREEN);
 		g.setColor(new Color(0, 0, 116));
 		g.fillRect((int)actionkutusu.getX(),(int)actionkutusu.getY(),(int)actionkutusu.getWidth(),(int)actionkutusu.getHeight());
 	}
 	public Rectangle getRectangle() {
 		return actionkutusu;
 	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(kutudurum)
@@ -39,6 +37,7 @@ public class Action  implements ActionListener {
 				}
 				else if(yon=="asagi")
 				{
+					if(HareketliEngeller.hareketliy>150)
 					HareketliEngeller.hareketliy-=50;
 				}
 			}
