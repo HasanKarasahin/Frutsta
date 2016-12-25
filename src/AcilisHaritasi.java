@@ -1,18 +1,14 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JLabel;
 import javax.swing.Timer;
 
 public class AcilisHaritasi extends Haritalar implements ActionListener {
-	Timer acilistimer;
-	Timer acilistimer2;
+	Timer acilistimer,acilistimer2;
 	int kontrol=0;
 	ZamanCubugu zamancubugu;
-	static boolean  AcilisKontrol1=true,AcilisMap_kontrol=true;
+	boolean  AcilisKontrol1=true,AcilisMap_kontrol=true;
 	public AcilisHaritasi() {
 		super();
 		zamancubugu=new ZamanCubugu();
@@ -49,29 +45,25 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 			if(AcilisKontrol1)
 			{
 				player.playerHareket();
-				AcilisKontrol1=player.PlayerHareketsizEngelKontrol(0, -adim,hareketsizengel,HareketsizEngelSayisi);
+				AcilisKontrol1=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				 if(FareDinleyici.x>150 &&FareDinleyici.x<300)
 				 {
 					 if(FareDinleyici.y>100 && FareDinleyici.y<200)
 					 {
-						 System.out.println("Basla");
 						 Pencere.label[0].setForeground(Color.WHITE);
 						 Pencere.label[1].setForeground(Color.LIGHT_GRAY);
 						 Pencere.label[2].setForeground(Color.LIGHT_GRAY);
 						 kontrol=1;
 						 AcilisKontrol1=false;
-						 
 					 }
 					 else if(FareDinleyici.y>150 && FareDinleyici.y<250)
 					 {
-						 System.out.println("Bilgi");
 						 Pencere.label[0].setForeground(Color.LIGHT_GRAY);
 						 Pencere.label[1].setForeground(Color.WHITE);
 						 Pencere.label[2].setForeground(Color.LIGHT_GRAY);
 					 }
 					 else if(FareDinleyici.y>250 && FareDinleyici.y<350)
 					 {
-						 System.out.println("Ayar");
 						 Pencere.label[0].setForeground(Color.LIGHT_GRAY);
 						 Pencere.label[1].setForeground(Color.LIGHT_GRAY);
 						 Pencere.label[2].setForeground(Color.WHITE);
@@ -125,10 +117,5 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 							LevelGecis.timerlevelgecis.start();
 							Pencere.pencere[6].setVisible(true);
 							Pencere.pencere[0].setVisible(false);
-						}
-					}
-				}	 
-			}
-	}
-}
+						}}}}}}
 

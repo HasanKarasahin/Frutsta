@@ -1,6 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Timer;
 
 public class LevelGecis extends Haritalar implements ActionListener {
@@ -20,11 +19,9 @@ int degerkontrol=0;
 			degerkontrol=0;
 			levelgeciskontrol=true;
 			timerlevelgecis.stop();
-			Pencere.pencere[5].setVisible(false);
+			Pencere.pencere[6].setVisible(false);
 		}
 		else 
-		{
 			degerkontrol++;
-		}
 	}
 }

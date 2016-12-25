@@ -3,18 +3,15 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Canavarlar  implements ActionListener {
-Rectangle canavar;
-static Timer canavartimer;
-int kontrol=0,max,min,baslangisx,baslangisy;
-String hareketyonu;
+public class Canavarlar extends Object  implements ActionListener {
+private Timer canavartimer;
+private int kontrol=0,max,min,baslangisx,baslangisy;
+private String hareketyonu;
 	public Canavarlar(int x,int y ,int genislik,int yukseklik,int interval,int max,int min,String hareketyonu) 
 	{
-		canavar=new Rectangle(x,y,genislik,yukseklik);
+		object=new Rectangle(x,y,genislik,yukseklik);
 		canavartimer=new Timer(interval, this);
 		canavartimer.start();
 		this.max=max;
@@ -26,11 +23,11 @@ String hareketyonu;
 	public void CanavarCiz(Graphics g)
 	{
 		g.setColor(Color.BLACK);
-		canavar.setLocation(baslangisx,baslangisy);
-		g.fillRect((int)canavar.getX(),(int)canavar.getY(),(int)canavar.getWidth(),(int)canavar.getHeight());
+		object.setLocation(baslangisx,baslangisy);
+		g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());
 	}
 	public Rectangle getRectangle() {
-		return canavar;
+		return object;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -96,7 +93,6 @@ String hareketyonu;
 		}
 		else if(hareketyonu=="dur")
 		{
-			
 		}
 	}
 }

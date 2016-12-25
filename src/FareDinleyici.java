@@ -10,6 +10,5 @@ import java.awt.event.MouseMotionListener;
 		{
 			x=e.getX();
 			y=e.getY();
-		}
-	}
+			}}
 

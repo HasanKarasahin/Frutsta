@@ -2,68 +2,55 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-public class Player {
-	Rectangle Player;
+public class Player extends Object {
+	Rectangle gecici;
 	 public Player(int x,int y,int genislik,int yukseklik) 
 		{
-			Player=new Rectangle(x, y, genislik, yukseklik);
+		 object=new Rectangle(x, y, genislik, yukseklik);
 		}
 	 public void PlayerCiz(Graphics g)
 		{
 		    g.setColor(new Color(51, 47, 46));
-			g.fillRect((int)Player.getX(),(int)Player.getY(),(int)Player.getWidth(),(int)Player.getHeight());
+			g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());
 		}
-	 public boolean PlayerHareketsizEngelKontrol(int x,int y,HareketsizEngeller[] hareketsizEngeller,int hareketsizengelsayisi)
-		{
-			  Rectangle gecici=new Rectangle(Player);
-			  gecici.setLocation((int)gecici.getX()+x,(int)gecici.getY()+y);
+	 public void geciciplayer()
+	 {
+		 gecici=new Rectangle(object);
+		 gecici.setLocation((int)gecici.getX(),(int)gecici.getY()-1);
+	 }
+	 public boolean PlayerHareketsizEngelKontrol(HareketsizEngeller[] hareketsizEngeller)
+		{ 
+		      geciciplayer();
 			  boolean cakisma=false;	  
-			  //HareketsizEngelKontrolENGELE ÇARPTI MI ÇARPMADI MI?
-			  for (int i = 0; i < hareketsizengelsayisi; i++) 
+			  for (int i = 0; i < hareketsizEngeller.length; i++) 
 			  {
 				if (gecici.intersects(hareketsizEngeller[i].getRectangle()))
-					cakisma=true;
+					return false;
 			  }
 			  if(cakisma==false)
-				  Player.setLocation((int)Player.getX()+x,(int)Player.getY()+y);
+				  object.setLocation((int)object.getX(),(int)object.getY()-1);
 			  else 
-			  {
 				  return false;
-			  } 
 			  return true;
 		}
-	 public boolean PlayerHareketliEngelKontrol(int x,int y,HareketliEngeller engel,int hareketlizengelsayisi)
-		{
-			  Rectangle gecici=new Rectangle(Player);
-			  gecici.setLocation((int)gecici.getX()+x,(int)gecici.getY()+y);
-			  boolean cakisma=false;	  
-			  // Hareketli ENGELE ÇARPTI MI ÇARPMADI MI?
+	 public boolean PlayerHareketliEngelKontrol(HareketliEngeller engel)
+		{	  
+		        geciciplayer();
 				if (gecici.intersects(engel.getRectangle()))
-				{
-					 System.out.println("Hareketli Engele Carpma OLdu");
 					 return false;
-				}
 				return true;
 		}
-	 public boolean PlayerBayrakKontrol(int x,int y,Bayrak bayrak,int bayraksayisi,int yemkontrol,int yemsayisi)
+	 public boolean PlayerBayrakKontrol(Bayrak bayrak)
 		{
-			 Rectangle gecici=new Rectangle(Player);
-			 gecici.setLocation((int)gecici.getX()+x,(int)gecici.getY()+y);
-			 for (int i = 0; i < bayraksayisi; i++) 
-			  {
+		      geciciplayer();
 				if (gecici.intersects(bayrak.getRectangle()))
-			   {
 						return false;
-			   }
-			  }
 			 return true;
 		}
-	 public int PlayerYemKontrol(int x,int y,Yemler[] yem,int yemsayisi,int yemkontrol)
+	 public int PlayerYemKontrol(Yemler[] yem,int yemkontrol)
 		{
-			 Rectangle gecici= new Rectangle(Player);
-			  gecici.setLocation((int)gecici.getX()+x,(int)gecici.getY()+y);
-			  //YEM YEDÝ MÝ YEMEDÝ MÝ?//Yediyse Kaç Tane Yedi?
-			  for (int i = 0; i < yemsayisi; i++) 
+		      geciciplayer();
+			  for (int i = 0; i < yem.length; i++) 
 			  {
 				if (gecici.intersects(yem[i].getRectangle()))
 			   {
@@ -74,33 +61,25 @@ public class Player {
 			  }
 			  return yemkontrol;
 		}
-	 public void PlayerKutuEtkilesim(int x,int y,Action actiondeneme)
+	 public void PlayerKutuEtkilesim(Action actiondeneme)
 		{
-			  Rectangle gecici= new Rectangle(Player);
-			  gecici.setLocation((int)gecici.getX()+x,(int)gecici.getY()+y);
+		        geciciplayer();
 				if (gecici.intersects(actiondeneme.getRectangle()))
 					Action.kutudurum=true;
 				else
 					Action.kutudurum=false;
 		}
-	 public boolean PlayerCanavarKontrol(int x,int y,Canavarlar[] canevar,int canavarsayisi)
-		{
-			  Rectangle gecici=new Rectangle(Player);
-			  gecici.setLocation((int)gecici.getX()+x,(int)gecici.getY()+y);
-			  boolean cakisma=false;	  
-			  // Canevara ÇARPTI MI ÇARPMADI MI?
+	 public boolean PlayerCanavarKontrol(Canavarlar[] canevar)
+		{	  
+		      geciciplayer();
 			  for (int i = 0; i < canevar.length; i++) 
 			  {
 				  if (gecici.intersects(canevar[i].getRectangle()))
-					{
-						 System.out.println("Cenavara Carpti");
 						 return false;
-					}
 			  }
 				return true;
 		}
 	 public void playerHareket()
 		{
-			Player.setLocation(FareDinleyici.x-10,FareDinleyici.y-23);
-		}
-}
+		 object.setLocation(FareDinleyici.x-10,FareDinleyici.y-23);
+		}}

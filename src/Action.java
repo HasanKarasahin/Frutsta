@@ -3,16 +3,14 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Timer;
 
-public class Action  implements ActionListener {
-	Rectangle actionkutusu;
+public class Action extends Object  implements ActionListener {
 	public static String yon;
 	Timer timer3;
 	public static boolean kutudurum=false;
 	public Action(int x,int y , int genislik,int yukseklik,String yon) {
-		actionkutusu=new Rectangle(x,y,genislik,yukseklik);	
+		object=new Rectangle(x,y,genislik,yukseklik);	
 		this.yon=yon;
 		timer3=new Timer(1000, this);
 		timer3.start();
@@ -20,10 +18,10 @@ public class Action  implements ActionListener {
 	public void actionkutusuCiz(Graphics g)
 	{
 		g.setColor(new Color(0, 0, 116));
-		g.fillRect((int)actionkutusu.getX(),(int)actionkutusu.getY(),(int)actionkutusu.getWidth(),(int)actionkutusu.getHeight());
+		g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());
 	}
 	public Rectangle getRectangle() {
-		return actionkutusu;
+		return object;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -39,8 +37,4 @@ public class Action  implements ActionListener {
 				{
 					if(HareketliEngeller.hareketliy>150)
 					HareketliEngeller.hareketliy-=50;
-				}
-			}
-		}
-	}
-}
+				}}}}}

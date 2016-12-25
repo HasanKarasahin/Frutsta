@@ -5,7 +5,6 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -29,9 +28,8 @@ public class Pencere {
 		FareDinleyici fare = new FareDinleyici();
 	    for (int i = 0; i < pencere.length; i++) 
 	    {
-	    	pencere[i] = new JFrame("Harita");
+	    	pencere[i] = new JFrame();
 	    	pencere[i].setSize(500,500);
-	    	pencere[i].setVisible(false);
 	    	pencere[i].setLocation(410, 0);
 	    	pencere[i].addMouseMotionListener(fare);
 	    	pencere[i].setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +64,7 @@ public class Pencere {
     	 acilisharitasi.add(label[0]);
     	 acilisharitasi.add(label[1]);	
     	 acilisharitasi.add(label[2]);	
-    	 JLabel BASLIKlabel=new JLabel("Frutsta V6");
+    	 JLabel BASLIKlabel=new JLabel("Frutsta V7");
     	 BASLIKlabel.setFont(tip);
     	 BASLIKlabel.setForeground(Color.RED);
     	 BASLIKlabel.setBounds(new Rectangle(new Point(100, 20), BASLIKlabel.getPreferredSize()));

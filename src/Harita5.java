@@ -1,8 +1,6 @@
-import java.awt.Cursor;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Timer;
 
 public class Harita5 extends Haritalar implements ActionListener {
@@ -59,11 +57,11 @@ public class Harita5 extends Haritalar implements ActionListener {
 			if(kontrol5)
 			{
 				player.playerHareket();
-				kontrol5=player.PlayerHareketsizEngelKontrol(0, -adim,hareketsizengel,HareketsizEngelSayisi);
+				kontrol5=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				if(kontrol5)
 				{
-					kontrol5=player.PlayerCanavarKontrol(0, -adim,canevar,canevarsayisi);
-					yemkontrol=player.PlayerYemKontrol(0, -adim, yem, yemsayisi,yemkontrol);
+					kontrol5=player.PlayerCanavarKontrol(canevar);
+					yemkontrol=player.PlayerYemKontrol(yem,yemkontrol);
 				}
 				if(yemkontrol==0)
 					yem[0]=new Yemler(238,0,10,20);
