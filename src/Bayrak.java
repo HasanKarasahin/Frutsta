@@ -11,8 +11,4 @@ public class Bayrak extends Object  {
 	{
 		g.setColor(new Color(0, 148, 0));
 		g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());
-	}
-	public Rectangle getRectangle() {
-		return object;
-	}
-}
+	}}

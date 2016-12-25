@@ -5,11 +5,12 @@ import javax.swing.Timer;
 public class LevelGecis extends Haritalar implements ActionListener {
 static Timer timerlevelgecis;
 static boolean levelgeciskontrol=false;
+
 int degerkontrol=0;
 	public LevelGecis() 
-	{
-		timerlevelgecis=new Timer(500, this);
-		timerlevelgecis.stop();
+	{	 
+    	 timerlevelgecis=new Timer(250, this);
+    	 timerlevelgecis.stop();
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
@@ -19,9 +20,7 @@ int degerkontrol=0;
 			degerkontrol=0;
 			levelgeciskontrol=true;
 			timerlevelgecis.stop();
-			Pencere.pencere[6].setVisible(false);
+			pencere[6].setVisible(false);
 		}
 		else 
-			degerkontrol++;
-	}
-}
+			degerkontrol++;}}

@@ -9,11 +9,11 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 	int kontrol=0;
 	ZamanCubugu zamancubugu;
 	boolean  AcilisKontrol1=true,AcilisMap_kontrol=true;
+	
 	public AcilisHaritasi() {
 		super();
 		zamancubugu=new ZamanCubugu();
 		hareketsizengel=new HareketsizEngeller[7];
-		HareketsizEngelSayisi=hareketsizengel.length;
 		hareketsizengel[0]=new HareketsizEngeller(0, 0, 500, 100);
 		hareketsizengel[1]=new HareketsizEngeller(0,400,500,75);
 		hareketsizengel[2]=new HareketsizEngeller(0,80,80,260);
@@ -47,32 +47,32 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 				player.playerHareket();
 				AcilisKontrol1=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				 if(FareDinleyici.x>150 &&FareDinleyici.x<300)
-				 {
+				 {		
 					 if(FareDinleyici.y>100 && FareDinleyici.y<200)
 					 {
-						 Pencere.label[0].setForeground(Color.WHITE);
-						 Pencere.label[1].setForeground(Color.LIGHT_GRAY);
-						 Pencere.label[2].setForeground(Color.LIGHT_GRAY);
+						 label[0].setForeground(Color.WHITE);
+						 label[1].setForeground(Color.LIGHT_GRAY);
+						 label[2].setForeground(Color.LIGHT_GRAY);
 						 kontrol=1;
 						 AcilisKontrol1=false;
 					 }
 					 else if(FareDinleyici.y>150 && FareDinleyici.y<250)
 					 {
-						 Pencere.label[0].setForeground(Color.LIGHT_GRAY);
-						 Pencere.label[1].setForeground(Color.WHITE);
-						 Pencere.label[2].setForeground(Color.LIGHT_GRAY);
+						 label[0].setForeground(Color.LIGHT_GRAY);
+						 label[1].setForeground(Color.WHITE);
+						 label[2].setForeground(Color.LIGHT_GRAY);
 					 }
 					 else if(FareDinleyici.y>250 && FareDinleyici.y<350)
 					 {
-						 Pencere.label[0].setForeground(Color.LIGHT_GRAY);
-						 Pencere.label[1].setForeground(Color.LIGHT_GRAY);
-						 Pencere.label[2].setForeground(Color.WHITE);
+						 label[0].setForeground(Color.LIGHT_GRAY);
+						 label[1].setForeground(Color.LIGHT_GRAY);
+						 label[2].setForeground(Color.WHITE);
 					 }
 					 else
 					 {
-						 Pencere.label[0].setForeground(Color.LIGHT_GRAY);
-						 Pencere.label[1].setForeground(Color.LIGHT_GRAY);
-						 Pencere.label[2].setForeground(Color.LIGHT_GRAY);
+						 label[0].setForeground(Color.LIGHT_GRAY);
+						 label[1].setForeground(Color.LIGHT_GRAY);
+						 label[2].setForeground(Color.LIGHT_GRAY);
 					 }
 				 }
 			}
@@ -107,15 +107,15 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 							kontrol=3;
 							acilistimer2.stop();
 							AcilisMap_kontrol=false;
-							Pencere.pencere[1].setVisible(true);
-							Pencere.pencere[0].dispose();
+							pencere[1].setVisible(true);
+							pencere[0].dispose();
 							Harita1.map1_kontrol=true;
 							Harita1.timer1.start();
 						}
 						else 
 						{
 							LevelGecis.timerlevelgecis.start();
-							Pencere.pencere[6].setVisible(true);
-							Pencere.pencere[0].setVisible(false);
+							pencere[6].setVisible(true);
+							pencere[0].setVisible(false);
 						}}}}}}
 

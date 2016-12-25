@@ -10,8 +10,4 @@ public class HareketsizEngeller extends Object {
 	public void HareketsizEngelciz(Graphics g)
 	{
 		g.setColor(new Color(0, 0, 0));
-	    g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());	
-	}
-	public Rectangle getRectangle() 
-	{
-		return object;}}
+	    g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());	}}

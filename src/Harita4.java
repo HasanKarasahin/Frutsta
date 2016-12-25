@@ -12,7 +12,6 @@ public class Harita4 extends Haritalar implements ActionListener {
 		 player=new Player(17, 20, 25, 25);
 		 bayrak=new Bayrak(0, 0, 0,0);
 		 hareketsizengel=new HareketsizEngeller[9];
-		 HareketsizEngelSayisi=hareketsizengel.length;
 		 hareketsizengel[0]=new HareketsizEngeller(50, 0, 500, 50);//en üst
 		 hareketsizengel[1]=new HareketsizEngeller(0,100,440,50);//bir alt
 		 hareketsizengel[2]=new HareketsizEngeller(50,200,450,50);//bir alt
@@ -27,7 +26,6 @@ public class Harita4 extends Haritalar implements ActionListener {
 		 yem[0]=new Yemler(25,435,10,20);   
 		 yem[1]=new Yemler(0,0,0,0);  
 		 canevar=new Canavarlar[5];
-		 canevarsayisi=canevar.length;
 		 canevar[0]=new Canavarlar(100,50,50,50,170,510,50,"solsag");
 		 canevar[1]=new Canavarlar(510,150,50,50,180,510,50,"sagsol");
 		 canevar[2]=new Canavarlar(100,250,50,50,190,510,50,"solsag");
@@ -59,7 +57,7 @@ public class Harita4 extends Haritalar implements ActionListener {
 		{
 			if(kontrol4)
 			{
-				Pencere.pencere[4].setCursor(Pencere.invisibleCursor);
+				pencere[4].setCursor(invisibleCursor);
 				player.playerHareket();
 				kontrol4=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				map4_kontrol=player.PlayerBayrakKontrol(bayrak);
@@ -78,7 +76,7 @@ public class Harita4 extends Haritalar implements ActionListener {
 			else 
 			{
 				yemkontrol=0;
-				Pencere.pencere[4].setCursor(Cursor.CROSSHAIR_CURSOR);
+				pencere[4].setCursor(Cursor.CROSSHAIR_CURSOR);
 				 player=new Player(17, 20, 25, 25);  
 				  if (20<FareDinleyici.x && FareDinleyici.x<30 &&FareDinleyici.y<50 && FareDinleyici.y>40) 
 						kontrol4=true;
@@ -98,14 +96,14 @@ public class Harita4 extends Haritalar implements ActionListener {
 				Harita5.timer5.start();
 				timer4.stop();
 				LevelGecis.levelgeciskontrol=false;
-				Pencere.pencere[5].setVisible(true);
-				Pencere.pencere[4].dispose();
+				pencere[5].setVisible(true);
+				pencere[4].dispose();
 			}
 			else 
 			{
 				LevelGecis.timerlevelgecis.start();
-				Pencere.pencere[6].setVisible(true);
-				Pencere.pencere[4].setVisible(false);
+				pencere[6].setVisible(true);
+				pencere[4].setVisible(false);
 				Pencere.Levelgecislabel.setText("Level 5 ");
 			}	
 		}

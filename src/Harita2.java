@@ -12,7 +12,6 @@ public class Harita2 extends Haritalar implements ActionListener  {
 		 player=new Player(0, 410, 25, 25);
 		 bayrak=new Bayrak(0, 0, 0,0);
 		 hareketsizengel=new HareketsizEngeller[10];
-		 HareketsizEngelSayisi=hareketsizengel.length;
 		 hareketsizengel[0]=new HareketsizEngeller(0, 0, 100, 400);
 		 hareketsizengel[1]=new HareketsizEngeller(0, 445, 490, 30);
 		 hareketsizengel[2]=new HareketsizEngeller(100,325,140,75);
@@ -57,7 +56,7 @@ public class Harita2 extends Haritalar implements ActionListener  {
 		{
 			if(kontrol2)
 			{
-				Pencere.pencere[2].setCursor(Pencere.invisibleCursor);
+				pencere[2].setCursor(invisibleCursor);
 				player.playerHareket();
 				kontrol2=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				yemkontrol=player.PlayerYemKontrol(yem,yemkontrol);
@@ -70,7 +69,7 @@ public class Harita2 extends Haritalar implements ActionListener  {
 			}
 			else 
 			{
-				    Pencere.pencere[2].setCursor(Cursor.CROSSHAIR_CURSOR);
+				    pencere[2].setCursor(Cursor.CROSSHAIR_CURSOR);
 				    yemkontrol=0;
 				    yem[0]=new Yemler(380, 250, 10,20);
 					yem[1]=new Yemler(370, 150, 10,20);
@@ -94,16 +93,12 @@ public class Harita2 extends Haritalar implements ActionListener  {
 				Harita3.timer3.start();
 				timer2.stop();
 				LevelGecis.levelgeciskontrol=false;
-				 Pencere.pencere[3].setVisible(true);
-					Pencere.pencere[2].dispose();
+				 pencere[3].setVisible(true);
+					pencere[2].dispose();
 			}
 			else 
 			{
 				LevelGecis.timerlevelgecis.start();
-				Pencere.pencere[6].setVisible(true);
-				Pencere.pencere[2].setVisible(false);
-				Pencere.Levelgecislabel.setText("Level 3 ");
-			}
-		}
-	}
-}
+				pencere[6].setVisible(true);
+				pencere[2].setVisible(false);
+				Pencere.Levelgecislabel.setText("Level 3 ");}}}}

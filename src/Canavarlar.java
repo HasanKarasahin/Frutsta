@@ -14,20 +14,13 @@ private String hareketyonu;
 		object=new Rectangle(x,y,genislik,yukseklik);
 		canavartimer=new Timer(interval, this);
 		canavartimer.start();
-		this.max=max;
-		baslangisx=x;
-		baslangisy=y;
-		this.min=min;
-		this.hareketyonu=hareketyonu;
+		this.max=max;baslangisx=x;baslangisy=y;this.min=min;this.hareketyonu=hareketyonu;
 	}
 	public void CanavarCiz(Graphics g)
 	{
 		g.setColor(Color.BLACK);
 		object.setLocation(baslangisx,baslangisy);
 		g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());
-	}
-	public Rectangle getRectangle() {
-		return object;
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -43,9 +36,7 @@ private String hareketyonu;
 			{
 				baslangisx+=10;
 				if(baslangisx==max)
-					kontrol=0;
-			}
-		}
+					kontrol=0;}}
 		else if(hareketyonu=="solsag")
 		{
 			if(kontrol==0)
@@ -58,9 +49,7 @@ private String hareketyonu;
 			{
 				baslangisx+=10;
 				if(baslangisx==max)
-					kontrol=0;
-			}
-		}
+					kontrol=0;}}
 		else if(hareketyonu=="asagiyukari")
 		{
 			if(kontrol==0)
@@ -73,9 +62,7 @@ private String hareketyonu;
 			{
 				baslangisy+=10;
 				if(baslangisy==max)
-					kontrol=0;
-			}
-		}
+					kontrol=0;}}
 		else if(hareketyonu=="yukariasagi")
 		{
 			if(kontrol==0)
@@ -88,11 +75,7 @@ private String hareketyonu;
 			{
 				baslangisy-=10;
 				if(baslangisy==min)
-					kontrol=0;
-			}
-		}
+					kontrol=0;}}
 		else if(hareketyonu=="dur")
 		{
-		}
-	}
-}
+		}}}

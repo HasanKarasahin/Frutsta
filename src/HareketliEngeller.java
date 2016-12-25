@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 public class HareketliEngeller extends Object {
-	public static int hareketlix , hareketliy;
+   static int hareketlix , hareketliy;
 	public HareketliEngeller(int x,int y , int genislik,int yukseklik) 
 	{
 		object=new Rectangle(x, y, genislik, yukseklik);
@@ -14,9 +14,4 @@ public class HareketliEngeller extends Object {
 	{
 		 g.setColor(Color.BLACK);
 		 object.setLocation((int)object.getX(),hareketliy);
-	     g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());	
-	}
-	public Rectangle getRectangle() 
-	{
-		return object;
-	}}
+	     g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());	}}

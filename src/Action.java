@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 public class Action extends Object  implements ActionListener {
-	public static String yon;
+	String yon;
 	Timer timer3;
-	public static boolean kutudurum=false;
+	 static boolean kutudurum=false;
 	public Action(int x,int y , int genislik,int yukseklik,String yon) {
 		object=new Rectangle(x,y,genislik,yukseklik);	
 		this.yon=yon;
@@ -32,9 +32,10 @@ public class Action extends Object  implements ActionListener {
 				if(yon=="yukari")
 				{
 					HareketliEngeller.hareketliy+=50;
+					
 				}
 				else if(yon=="asagi")
 				{
 					if(HareketliEngeller.hareketliy>150)
-					HareketliEngeller.hareketliy-=50;
+						HareketliEngeller.hareketliy-=50;
 				}}}}}

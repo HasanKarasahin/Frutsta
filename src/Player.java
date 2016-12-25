@@ -20,17 +20,13 @@ public class Player extends Object {
 	 }
 	 public boolean PlayerHareketsizEngelKontrol(HareketsizEngeller[] hareketsizEngeller)
 		{ 
-		      geciciplayer();
-			  boolean cakisma=false;	  
+		      geciciplayer();	  
 			  for (int i = 0; i < hareketsizEngeller.length; i++) 
 			  {
 				if (gecici.intersects(hareketsizEngeller[i].getRectangle()))
 					return false;
 			  }
-			  if(cakisma==false)
 				  object.setLocation((int)object.getX(),(int)object.getY()-1);
-			  else 
-				  return false;
 			  return true;
 		}
 	 public boolean PlayerHareketliEngelKontrol(HareketliEngeller engel)
@@ -55,6 +51,7 @@ public class Player extends Object {
 				if (gecici.intersects(yem[i].getRectangle()))
 			   {
 					yem[i]=new Yemler(0, 0, 0, 0);
+					Sesler.YemSes();
 					yemkontrol++;
 					return yemkontrol;
 			   }

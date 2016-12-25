@@ -11,7 +11,6 @@ public class Harita5 extends Haritalar implements ActionListener {
 		 player=new Player(0, 260, 25, 25);
 		 bayrak=new Bayrak(0, 0, 0,0);
 		 hareketsizengel=new HareketsizEngeller[8];
-		 HareketsizEngelSayisi=hareketsizengel.length;
 		 hareketsizengel[0]=new HareketsizEngeller(0, 0, 225, 125);//ustsol
 		 hareketsizengel[1]=new HareketsizEngeller(260,0,235,125);//ustsag
 		 hareketsizengel[2]=new HareketsizEngeller(0,155,75,100);//ustsolalt1
@@ -21,7 +20,6 @@ public class Harita5 extends Haritalar implements ActionListener {
 		 hareketsizengel[6]=new HareketsizEngeller(0,450,290,50);//alt c�zg�
          hareketsizengel[7]=new HareketsizEngeller(175,200,150,10);
 		 canevar=new Canavarlar[2];
-		 canevarsayisi=canevar.length;
 		 canevar[0]=new Canavarlar(110,155,75,100,170,150,70,"solsag");
 		 canevar[1]=new Canavarlar(310,155,75,100,170,350,270,"sagsol");
          yem=new Yemler[4];
@@ -88,7 +86,4 @@ public class Harita5 extends Haritalar implements ActionListener {
 		}
 		else
 		{
-			System.out.println("Oyun Bitti");
-		}
-	}
-}
+			System.out.println("Oyun Bitti");}}}

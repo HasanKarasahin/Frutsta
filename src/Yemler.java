@@ -10,7 +10,4 @@ public class Yemler extends Object {
 	public void YemCiz(Graphics g)
 	{
 		g.setColor(new Color(199, 0, 6));	
-		g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());
-	}
-	public Rectangle getRectangle() {
-		return object;}}
+		g.fillRect((int)object.getX(),(int)object.getY(),(int)object.getWidth(),(int)object.getHeight());}}

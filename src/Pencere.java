@@ -1,21 +1,15 @@
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class Pencere {
+public class Pencere extends JPanel {
 	static JFrame[] pencere=new JFrame[7];
 	static JLabel[] label=new JLabel[4];
 	static  JLabel Levelgecislabel;
-	static Toolkit toolkit = Toolkit.getDefaultToolkit();
-	static Point hotSpot = new Point(0, 0);
-	static BufferedImage cursorImage = new BufferedImage(10, 10,BufferedImage.TRANSLUCENT);
-	static Cursor invisibleCursor = toolkit.createCustomCursor(cursorImage,hotSpot, "InvisibleCursor");
 	public static void main(String[] args) 
 	{
 		Harita1 harita1 = new Harita1();
@@ -43,10 +37,6 @@ public class Pencere {
     	pencere[4].add(harita4);
     	pencere[5].add(harita5);
     	acilisharitasi.setBackground(Color.DARK_GRAY);
-    	harita1.setBackground(Color.WHITE);
-    	harita2.setBackground(Color.WHITE);
-    	harita3.setBackground(Color.WHITE);
-    	harita4.setBackground(Color.WHITE);
     	lvlgecis.setBackground(Color.BLACK);
     	Font tip=new Font("Algerian", 50, 50);
     	for (int i = 0; i < label.length; i++) 
@@ -74,6 +64,4 @@ public class Pencere {
     	 Levelgecislabel.setForeground(Color.RED);
     	 Levelgecislabel.setBounds(new Rectangle(new Point(150, 80), Levelgecislabel.getPreferredSize()));
     	 pencere[6].add(Levelgecislabel);
-    	 pencere[6].add(lvlgecis);
-	}
-}
+    	 pencere[6].add(lvlgecis);}}
