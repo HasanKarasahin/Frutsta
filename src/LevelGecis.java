@@ -7,6 +7,8 @@ static Timer timerlevelgecis;
 static boolean levelgeciskontrol=false;
 
 int degerkontrol=0;
+int durum=0;
+
 	public LevelGecis() 
 	{	 
     	 timerlevelgecis=new Timer(250, this);
@@ -17,6 +19,9 @@ int degerkontrol=0;
 	{
 		if(degerkontrol==1)
 		{
+			ZamanCubugu.brenk=30;
+			ZamanCubugu.grenk=7;
+			ZamanCubugu.rrenk=0;
 			degerkontrol=0;
 			levelgeciskontrol=true;
 			timerlevelgecis.stop();

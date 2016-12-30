@@ -56,12 +56,13 @@ public class Harita3 extends Haritalar implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
+		
 		if(map3_kontrol)
 		{
 			if(kontrol3)
 			{
 				pencere[3].setCursor(invisibleCursor);
-				player.playerHareket();
+				player.playerHareket(0,0);
 				kontrol3=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				map3_kontrol=player.PlayerBayrakKontrol(bayrak);
 				if(kontrol3)
@@ -76,7 +77,7 @@ public class Harita3 extends Haritalar implements ActionListener {
 			{
 				pencere[3].setCursor(Cursor.CROSSHAIR_CURSOR);
 				 player=new Player(0, 265, 25, 25);  
-				  if (0<FareDinleyici.x && FareDinleyici.x<40 &&FareDinleyici.y>275 && FareDinleyici.y<295) 
+				  if (0<FareDinleyici.x && FareDinleyici.x<=35 &&FareDinleyici.y>=265 && FareDinleyici.y<=284) 
 						kontrol3=true;
 				     yemkontrol=0;
 				     yem[0]=new Yemler(85, 150, 10,20);
@@ -105,7 +106,7 @@ public class Harita3 extends Haritalar implements ActionListener {
 				LevelGecis.timerlevelgecis.start();
 				pencere[6].setVisible(true);
 				pencere[3].setVisible(false);
-				Pencere.Levelgecislabel.setText("Level 4 ");
+				Levelgecislabel.setText("Level 4 ");
 			}	
 		}
 	}

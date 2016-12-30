@@ -1,5 +1,8 @@
 import java.awt.Rectangle;
-public class Object {
+
+import javax.sound.sampled.Clip;
+public class Object{
 	 Rectangle object;
+	 Clip ses;
 	 public Rectangle getRectangle() {
 			return object;}}

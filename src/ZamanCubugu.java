@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 public class ZamanCubugu extends Object {
-int zamancubuguyatay=0;
+static int zamancubuguyatay=0;
 static int brenk=30;
 static int grenk=7;
 static int rrenk=0;

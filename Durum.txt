@@ -1,0 +1,2 @@
+--Gereksiz kutuphaneler kaldýrýldý.
+--Metotlardaki gereksiz paremetreler kaldýrýldý.

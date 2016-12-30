@@ -13,7 +13,7 @@ public class Harita2 extends Haritalar implements ActionListener  {
 		 bayrak=new Bayrak(0, 0, 0,0);
 		 hareketsizengel=new HareketsizEngeller[10];
 		 hareketsizengel[0]=new HareketsizEngeller(0, 0, 100, 400);
-		 hareketsizengel[1]=new HareketsizEngeller(0, 445, 490, 30);
+		 hareketsizengel[1]=new HareketsizEngeller(0, 445, 490, 50);
 		 hareketsizengel[2]=new HareketsizEngeller(100,325,140,75);
 		 hareketsizengel[3]=new HareketsizEngeller(410,0,80,450);
 		 hareketsizengel[4]=new HareketsizEngeller(40,0,400,100);
@@ -52,12 +52,13 @@ public class Harita2 extends Haritalar implements ActionListener  {
      }
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		if(map2_kontrol)
 		{
 			if(kontrol2)
 			{
 				pencere[2].setCursor(invisibleCursor);
-				player.playerHareket();
+				player.playerHareket(0,0);
 				kontrol2=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				yemkontrol=player.PlayerYemKontrol(yem,yemkontrol);
 				map2_kontrol=player.PlayerBayrakKontrol(bayrak);	
@@ -77,7 +78,7 @@ public class Harita2 extends Haritalar implements ActionListener  {
 					yem[3]=new Yemler(115, 300, 10,20);
 				    bayrak=new Bayrak(0, 0, 0,0);
 				    player=new Player(0, 410, 25, 25);  
-				  if (0<FareDinleyici.x && FareDinleyici.x<40 &&FareDinleyici.y>430 && FareDinleyici.y<450) 
+				  if (0<FareDinleyici.x && FareDinleyici.x<30 &&FareDinleyici.y>=416 && FareDinleyici.y<=425) 
 						kontrol2=true;
 				  hareketliengel=new HareketliEngeller(200,190,100,50);
 			}
@@ -101,4 +102,4 @@ public class Harita2 extends Haritalar implements ActionListener  {
 				LevelGecis.timerlevelgecis.start();
 				pencere[6].setVisible(true);
 				pencere[2].setVisible(false);
-				Pencere.Levelgecislabel.setText("Level 3 ");}}}}
+				Levelgecislabel.setText("Level 3");}}}}

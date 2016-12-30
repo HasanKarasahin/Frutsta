@@ -37,5 +37,4 @@ public class Action extends Object  implements ActionListener {
 				else if(yon=="asagi")
 				{
 					if(HareketliEngeller.hareketliy>150)
-						HareketliEngeller.hareketliy-=50;
-				}}}}}
+						HareketliEngeller.hareketliy-=50;}}}}}

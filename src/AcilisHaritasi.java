@@ -1,15 +1,21 @@
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 public class AcilisHaritasi extends Haritalar implements ActionListener {
-	Timer acilistimer,acilistimer2;
+	static Timer acilistimer;
+    static Timer acilistimer2;
 	int kontrol=0;
 	ZamanCubugu zamancubugu;
-	boolean  AcilisKontrol1=true,AcilisMap_kontrol=true;
-	
+	 boolean  AcilisKontrol1=false;
+	static boolean AcilisMap_kontrol=true;
+	Sesler seskontrol = new Sesler();
+	int menukontrol=0;
 	public AcilisHaritasi() {
 		super();
 		zamancubugu=new ZamanCubugu();
@@ -33,47 +39,61 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 		super.paintComponent(g);
 		if(AcilisMap_kontrol)
 		{
-			 for (int i = 0; i < hareketsizengel.length; i++) 
-			 hareketsizengel[i].HareketsizEngelciz(g);	 
-			 zamancubugu.zamancubuguCiz(g);
-			 player.PlayerCiz(g);
-			 repaint();	
+			    for (int i = 0; i < hareketsizengel.length; i++) 
+			    hareketsizengel[i].HareketsizEngelciz(g);	 
+			    zamancubugu.zamancubuguCiz(g);
+			    player.PlayerCiz(g);
+			    label[0].setBounds(new Rectangle(new Point(150, 100), label[0].getPreferredSize()));
+		    	label[1].setBounds(new Rectangle(new Point(150, 170), label[1].getPreferredSize()));
+		    	label[2].setBounds(new Rectangle(new Point(150, 260), label[2].getPreferredSize()));
+		    	label[3].setBounds(new Rectangle(new Point(100, 20),  label[3].getPreferredSize()));
+			    repaint();	
 		}
      }
+	
+	
+	public void MenuSes()
+	{
+		 if(menukontrol==0)
+			 seskontrol.MenuSes();
+			 menukontrol=1;
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		
 			if(AcilisKontrol1)
 			{
-				player.playerHareket();
+				  pencere[0].setCursor(Cursor.CROSSHAIR_CURSOR);
+				player.playerHareket(5,20);
 				AcilisKontrol1=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				 if(FareDinleyici.x>150 &&FareDinleyici.x<300)
 				 {		
 					 if(FareDinleyici.y>100 && FareDinleyici.y<200)
 					 {
 						 label[0].setForeground(Color.WHITE);
-						 label[1].setForeground(Color.LIGHT_GRAY);
-						 label[2].setForeground(Color.LIGHT_GRAY);
-						 kontrol=1;
 						 AcilisKontrol1=false;
+						 kontrol=1;
+						 MenuSes();
 					 }
 					 else if(FareDinleyici.y>150 && FareDinleyici.y<250)
 					 {
-						 label[0].setForeground(Color.LIGHT_GRAY);
 						 label[1].setForeground(Color.WHITE);
-						 label[2].setForeground(Color.LIGHT_GRAY);
+						 MenuSes();
 					 }
 					 else if(FareDinleyici.y>250 && FareDinleyici.y<350)
 					 {
-						 label[0].setForeground(Color.LIGHT_GRAY);
-						 label[1].setForeground(Color.LIGHT_GRAY);
 						 label[2].setForeground(Color.WHITE);
+						 MenuSes();
 					 }
-					 else
-					 {
-						 label[0].setForeground(Color.LIGHT_GRAY);
-						 label[1].setForeground(Color.LIGHT_GRAY);
-						 label[2].setForeground(Color.LIGHT_GRAY);
-					 }
+				 }
+				 else
+				 {
+					 menukontrol=0;
+					 label[0].setForeground(Color.LIGHT_GRAY);
+					 label[1].setForeground(Color.LIGHT_GRAY);
+					 label[2].setForeground(Color.LIGHT_GRAY);
+				   
 				 }
 			}
 			else
@@ -102,20 +122,22 @@ public class AcilisHaritasi extends Haritalar implements ActionListener {
 						zamancubugu.zamancubuguyatay-=10;
 						if(LevelGecis.levelgeciskontrol)
 						{
+							label[0].setForeground(Color.LIGHT_GRAY);
+							label[1].setForeground(Color.LIGHT_GRAY);
+							label[2].setForeground(Color.LIGHT_GRAY);	
 							LevelGecis.timerlevelgecis.stop();
 							LevelGecis.levelgeciskontrol=false;
-							kontrol=3;
-							acilistimer2.stop();
-							AcilisMap_kontrol=false;
+							kontrol=0;
 							pencere[1].setVisible(true);
-							pencere[0].dispose();
 							Harita1.map1_kontrol=true;
 							Harita1.timer1.start();
+							zamancubugu.zamancubuguyatay=0;
 						}
 						else 
 						{
+							AcilisMap_kontrol=false;
 							LevelGecis.timerlevelgecis.start();
 							pencere[6].setVisible(true);
-							pencere[0].setVisible(false);
-						}}}}}}
+							Levelgecislabel.setText("Level1");
+							pencere[0].setVisible(false);}}}}}}
 

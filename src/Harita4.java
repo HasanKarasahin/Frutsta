@@ -11,16 +11,15 @@ public class Harita4 extends Haritalar implements ActionListener {
 		 super();
 		 player=new Player(17, 20, 25, 25);
 		 bayrak=new Bayrak(0, 0, 0,0);
-		 hareketsizengel=new HareketsizEngeller[9];
+		 hareketsizengel=new HareketsizEngeller[8];
 		 hareketsizengel[0]=new HareketsizEngeller(50, 0, 500, 50);//en üst
 		 hareketsizengel[1]=new HareketsizEngeller(0,100,440,50);//bir alt
 		 hareketsizengel[2]=new HareketsizEngeller(50,200,450,50);//bir alt
 		 hareketsizengel[3]=new HareketsizEngeller(0,300,440,50);//bir alt
 		 hareketsizengel[4]=new HareketsizEngeller(50,400,450,90);//en alt
 		 hareketsizengel[5]=new HareketsizEngeller(0,0,10,500);
-		 hareketsizengel[6]=new HareketsizEngeller(0,455,500,20);
-		 hareketsizengel[7]=new HareketsizEngeller(485,0,10,500);
-		 hareketsizengel[8]=new HareketsizEngeller(0,0,500,10);
+		 hareketsizengel[6]=new HareketsizEngeller(485,0,10,500);
+		 hareketsizengel[7]=new HareketsizEngeller(0,0,500,10);
 		 yem=new Yemler[2];
 		 yemsayisi=yem.length;     
 		 yem[0]=new Yemler(25,435,10,20);   
@@ -53,17 +52,19 @@ public class Harita4 extends Haritalar implements ActionListener {
       }
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("X :" +FareDinleyici.x);
+		System.out.println("Y :" +FareDinleyici.y);
 		if(map4_kontrol)
 		{
 			if(kontrol4)
 			{
-				pencere[4].setCursor(invisibleCursor);
-				player.playerHareket();
-				kontrol4=player.PlayerHareketsizEngelKontrol(hareketsizengel);
+			    pencere[4].setCursor(invisibleCursor);
+				player.playerHareket(0,0);
+			     kontrol4=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				map4_kontrol=player.PlayerBayrakKontrol(bayrak);
 				if(kontrol4)
 				{
-					kontrol4=player.PlayerCanavarKontrol(canevar);
+			        kontrol4=player.PlayerCanavarKontrol(canevar);
 					yemkontrol=player.PlayerYemKontrol(yem,yemkontrol);
 				}
 				if(yemkontrol==0)
@@ -78,7 +79,7 @@ public class Harita4 extends Haritalar implements ActionListener {
 				yemkontrol=0;
 				pencere[4].setCursor(Cursor.CROSSHAIR_CURSOR);
 				 player=new Player(17, 20, 25, 25);  
-				  if (20<FareDinleyici.x && FareDinleyici.x<30 &&FareDinleyici.y<50 && FareDinleyici.y>40) 
+				  if (23<=FareDinleyici.x && FareDinleyici.x<=36 &&FareDinleyici.y<=49 && FareDinleyici.y>=23) 
 						kontrol4=true;
 				  yem[0]=new Yemler(25,435,10,20);  
 				  yem[1]=new Yemler(0,0,0,0);
@@ -104,8 +105,5 @@ public class Harita4 extends Haritalar implements ActionListener {
 				LevelGecis.timerlevelgecis.start();
 				pencere[6].setVisible(true);
 				pencere[4].setVisible(false);
-				Pencere.Levelgecislabel.setText("Level 5 ");
-			}	
-		}
-	}
+				Levelgecislabel.setText("Level 5");}	}}
 }

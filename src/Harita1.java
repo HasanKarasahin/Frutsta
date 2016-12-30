@@ -13,14 +13,14 @@ public class Harita1 extends Haritalar implements ActionListener {
 		bayrak=new Bayrak(0, 0, 0,0);
 		hareketsizengel=new HareketsizEngeller[9];
 		hareketsizengel[0]=new HareketsizEngeller(0, 0, 50, 420);
-		hareketsizengel[1]=new HareketsizEngeller(0, 460, 500, 20);
+		hareketsizengel[1]=new HareketsizEngeller(0, 460, 500, 40);
 		hareketsizengel[2]=new HareketsizEngeller(400, 380, 95, 100);
 		hareketsizengel[3]=new HareketsizEngeller(0, 170, 350,250);
-		hareketsizengel[4]=new HareketsizEngeller(485, 0, 10, 500);
+		hareketsizengel[4]=new HareketsizEngeller(485, 0, 10, 400);//yukari
 		hareketsizengel[5]=new HareketsizEngeller(400, 230, 45, 100);
-		hareketsizengel[6]=new HareketsizEngeller(400, 0, 100, 190);
-		hareketsizengel[7]=new HareketsizEngeller(0, 70, 350,50);
-		hareketsizengel[8]=new HareketsizEngeller(50, 0, 450,80);
+		hareketsizengel[6]=new HareketsizEngeller(400, 0, 100, 190);//ust sol
+	    hareketsizengel[7]=new HareketsizEngeller(0, 70, 350,50);//en ust2
+		hareketsizengel[8]=new HareketsizEngeller(50, 0, 450,80);//en ust
 		yem=new Yemler[4];
 		yemsayisi=yem.length;
 		yem[0]=new Yemler(370, 120, 10,20);
@@ -49,10 +49,11 @@ public class Harita1 extends Haritalar implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(map1_kontrol)
 		{
+			
 			if(kontrol1)
 			{
 				pencere[1].setCursor(invisibleCursor);
-				player.playerHareket();
+				player.playerHareket(0,0);
 				kontrol1=player.PlayerHareketsizEngelKontrol(hareketsizengel);
 				yemkontrol=player.PlayerYemKontrol(yem,yemkontrol);
 				map1_kontrol=player.PlayerBayrakKontrol(bayrak);
@@ -63,7 +64,7 @@ public class Harita1 extends Haritalar implements ActionListener {
 			{
 				pencere[1].setCursor(Cursor.CROSSHAIR_CURSOR);
 				 yemkontrol=0;
-				  if (0<FareDinleyici.x && FareDinleyici.x<50 && FareDinleyici.y<455 &&FareDinleyici.y>450) 
+				  if (0<=FareDinleyici.x && FareDinleyici.x<=30 && FareDinleyici.y<=446 &&FareDinleyici.y>=434) 
 					  kontrol1=true;
 				    player=new Player(0, 427, 25, 25);
 					yem[0]=new Yemler(370, 120, 10,20);
@@ -92,4 +93,4 @@ public class Harita1 extends Haritalar implements ActionListener {
 				LevelGecis.timerlevelgecis.start();
 				pencere[6].setVisible(true);
 				pencere[1].setVisible(false);
-				Levelgecislabel.setText("Level 2 ");}}}}
+				Levelgecislabel.setText("Level 2");}}}}
